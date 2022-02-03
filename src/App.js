@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components'
+import Header from './Components/Header'
+import Sidebar from './Components/Sidebar'
+import Feed from './Components/Feed'
+import Widget from './Components/Widget'
+import Story from './Components/Story';
+// import Stories from './Components/Stories'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <Header />
+      <div className="app_body">
+        <Sidebar />
+        <Feed />
+        <Widget />
+        <Story />
+        {/* <Stories /> */}
+      </div>
+    </AppWrapper >
   );
 }
+const AppWrapper = styled.div`
+  background-color: #f1f2f5;
+  .app_body{
+    display: flex;
+  }
+`
+
 
 export default App;
