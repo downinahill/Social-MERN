@@ -8,10 +8,14 @@ import StorefrontIcon from '@material-ui/icons/Storefront'
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary'
 import ExpandMoreOutlined from '@material-ui/icons/ExpandMoreOutlined'
 import styled from 'styled-components'
+import { useStateValue } from '../StateProvider'
+
 
 const Sidebar = () => {
+    const [{ user }, dispatch] = useStateValue()
     return (
         <SidebarWrapper>
+            {/* <SidebarRow src={user.photoURL} title={user.displayName} /> */}
             <SidebarRow Icon={LocalHospitalIcon} title="COVID 19 Information Center" />
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
             <SidebarRow Icon={PeopleIcon} title="Friends" />

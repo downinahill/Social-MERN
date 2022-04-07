@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { Avatar, Input } from '@material-ui/core'
 import VideocamIcon from '@material-ui/icons/Videocam'
-// import PhotoLibraryIcon from '@material-ui/icons/PhotoLibraryIcon'
+import PhotoCameraIcon from '@material-ui/icons/PhotoCamera'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 import styled from 'styled-components'
+import { useStateValue } from '../StateProvider'
 
 const Messenger = () => {
     const [input, setInput] = useState('')
 
     const [image, setImage] = useState(null)
+    const [{ user }, dispatch] = useStateValue()
+
     const handleChange = e =>{
         if(e.target.files[0])
             setImage(e.target.files[0])
@@ -43,11 +46,11 @@ const Messenger = () => {
                     <h3>Live Video</h3>
                 </div>
                 <div className="messenger_option">
-                    {/* <PhotoLibraryIcon style={{ color: 'green' }} /> */}
+                    <PhotoCameraIcon style={{ color: 'green' }} />
                     <h3>Photo/Video</h3>
                 </div>
                 <div className="messenger_option">
-                    <InsertEmoticonIcon style={{ color: 'green' }} />
+                    <InsertEmoticonIcon style={{ color: 'orange' }} />
                     <h3>Feeling/Activity</h3>
                 </div>
             </MessengerBottom>
@@ -77,7 +80,7 @@ const MessengerTop = styled.div`
             outline-width: 0;
             border: none;
             padding: 5px 20px;
-            margin: 0 10px;
+            margin: 0 10px 10px 10px;
             border-radius: 999px;
             background-color: #eff2f5;
         }
@@ -92,6 +95,24 @@ const MessengerTop = styled.div`
 
 const MessengerBottom = styled.div`
     display: flex;
+    justify-content: space-evenly;
+    .messenger_option{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        color: gray;
+        margin: 5px;
+        h3{
+            font-size: medium;
+            margin-left: 10px;
+
+        }
+        &:hover {
+            background-color: #eff2f5;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
 `
 
 export default Messenger

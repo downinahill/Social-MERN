@@ -1,13 +1,26 @@
 import React from 'react';
-// import Stories from './Stories'
+import Stories from './Stories'
 import styled from 'styled-components'
 import Messenger from './Messenger'
+import Post from './Post'
 
 const Feed = () => {
     return (
         <FeedWrapper>
-            {/* <Stories /> */}
+            <Stories />
             <Messenger />
+            <Post profilePic=""
+             message=""
+             timestamp=""
+             imgName=""
+             userName=""
+            />
+            <Post profilePic=""
+             message=""
+             timestamp=""
+             imgName=""
+             userName=""
+             />
         </FeedWrapper>
     )
 }

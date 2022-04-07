@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Story = ({ image, profileSrc, title }) => {
     return (
         <StoryWrapper imageUrl={`${image}`}>
-            <Avatar src={profileSrc} className="story_avatar" />
+            {/* <Avatar src={profileSrc} className="story_avatar" /> */}
             <h4>{title}</h4>
         </StoryWrapper>
     )
